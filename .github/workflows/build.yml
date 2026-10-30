@@ -18,8 +18,22 @@ jobs:
       - name: Install buildozer
         run: pip install --upgrade buildozer cython==0.29.36 virtualenv
       - name: Build
-        run: buildozer -v android debug
+        shell: bash
+        run: |
+          set -o pipefail
+          buildozer -v android debug 2>&1 | tee build.log
+      - name: Show the real error
+        if: failure()
+        shell: bash
+        run: |
+          echo "=============== ERROR LINES ==============="
+          grep -n -i -E "error:|fatal|Traceback|No such file|not found|failed|Exception|Killed|No space" build.log | grep -v -i "Wno-\|Werror=\|deprecated" | tail -40
+          echo "=============== LAST 60 LINES ==============="
+          tail -60 build.log
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: 3edda-apk
-          path: bin/*.apk
+          path: |
+            bin/*.apk
+            build.log
