@@ -9,7 +9,7 @@ requirements = python3==3.11.5,hostpython3==3.11.5,kivy==2.3.0,pillow,qrcode,ara
 orientation = portrait
 fullscreen = 0
 android.permissions = CAMERA,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,READ_MEDIA_IMAGES,INTERNET
-android.api = 33
+android.api = 35
 android.minapi = 26
 android.ndk = 25b
 android.archs = arm64-v8a
