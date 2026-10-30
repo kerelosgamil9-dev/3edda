@@ -1,0 +1,20 @@
+[app]
+title = 3edda
+package.name = edda
+package.domain = org.edda
+source.dir = .
+source.include_exts = py,png,jpg,kv,atlas,ttf,otf
+version = 1.0
+requirements = python3,kivy==2.3.0,pillow,qrcode,arabic-reshaper,python-bidi==0.4.2,fonttools,pyjnius,android
+orientation = portrait
+fullscreen = 0
+android.permissions = CAMERA,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,READ_MEDIA_IMAGES,INTERNET
+android.api = 33
+android.minapi = 24
+android.archs = arm64-v8a
+android.accept_sdk_license = True
+android.allow_backup = True
+
+[buildozer]
+log_level = 2
+warn_on_root = 1
