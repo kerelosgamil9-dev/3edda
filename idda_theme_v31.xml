@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="IddaTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/idda_navy</item>
+        <item name="android:windowSplashScreenBackground">@color/idda_navy</item>
+    </style>
+</resources>
